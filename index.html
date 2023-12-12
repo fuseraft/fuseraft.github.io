@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  ██████  ▄████▄   ▒█████  ▄▄▄█████▓▄▄▄█████▓▓██   ██▓▓█████ ▄▄▄     ▄▄▄█████▓  ██████  ▄████▄   ▒█████  ▓█████▄ ▓█████ 
+▒██    ▒ ▒██▀ ▀█  ▒██▒  ██▒▓  ██▒ ▓▒▓  ██▒ ▓▒ ▒██  ██▒▓█   ▀▒████▄   ▓  ██▒ ▓▒▒██    ▒ ▒██▀ ▀█  ▒██▒  ██▒▒██▀ ██▌▓█   ▀ 
+░ ▓██▄   ▒▓█    ▄ ▒██░  ██▒▒ ▓██░ ▒░▒ ▓██░ ▒░  ▒██ ██░▒███  ▒██  ▀█▄ ▒ ▓██░ ▒░░ ▓██▄   ▒▓█    ▄ ▒██░  ██▒░██   █▌▒███   
+  ▒   ██▒▒▓▓▄ ▄██▒▒██   ██░░ ▓██▓ ░ ░ ▓██▓ ░   ░ ▐██▓░▒▓█  ▄░██▄▄▄▄██░ ▓██▓ ░   ▒   ██▒▒▓▓▄ ▄██▒▒██   ██░░▓█▄   ▌▒▓█  ▄ 
+▒██████▒▒▒ ▓███▀ ░░ ████▓▒░  ▒██▒ ░   ▒██▒ ░   ░ ██▒▓░░▒████▒▓█   ▓██▒ ▒██▒ ░ ▒██████▒▒▒ ▓███▀ ░░ ████▓▒░░▒████▓ ░▒████▒
+▒ ▒▓▒ ▒ ░░ ░▒ ▒  ░░ ▒░▒░▒░   ▒ ░░     ▒ ░░      ██▒▒▒ ░░ ▒░ ░▒▒   ▓▒█░ ▒ ░░   ▒ ▒▓▒ ▒ ░░ ░▒ ▒  ░░ ▒░▒░▒░  ▒▒▓  ▒ ░░ ▒░ ░
+░ ░▒  ░ ░  ░  ▒     ░ ▒ ▒░     ░        ░     ▓██ ░▒░  ░ ░  ░ ▒   ▒▒ ░   ░    ░ ░▒  ░ ░  ░  ▒     ░ ▒ ▒░  ░ ▒  ▒  ░ ░  ░
+░  ░  ░  ░        ░ ░ ░ ▒    ░        ░       ▒ ▒ ░░     ░    ░   ▒    ░      ░  ░  ░  ░        ░ ░ ░ ▒   ░ ░ + ░    ░   
+      ░  ░ ░          ░ ░                     ░ ░        ░  ░     ░  ░              ░  ░ ░          ░ ░     ░       ░  ░
+         ░                                    ░ ░                                      ░                  ░             
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>String List and Array Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap"/>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title is-1">String List and Array Generator</h1>
+
+      <div class="columns is-flex-desktop">
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">Enter a list of strings here (newline delimited):</label>
+            <div class="control">
+              <textarea id="inputStrings" class="textarea" placeholder="String 1&#10;String 2&#10;String 3&#10;..."></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <button class="button is-primary" onclick="generateStrings()">
+              Generate Strings
+            </button>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">Generated:</label>
+          </div>
+
+          <div id="outputForms"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
