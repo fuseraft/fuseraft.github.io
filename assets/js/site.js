@@ -1,23 +1,27 @@
 const OutputType = {
     SqlWhereClause: {
       label: "SQL Where Clause",
-      type: "sql",
+      type: "sqlwhere",
+    },
+    SqlTempTable: {
+      label: "SQL Temp Table",
+      type: "sqltemptbl",
     },
     CSharpArray: {
       label: "C# Array",
-      type: "csharp",
+      type: "csharparray",
     },
     RubyList: {
       label: "Ruby & Python List",
-      type: "ruby",
+      type: "rbpylist",
     },
     JavaList: {
       label: "Java List",
-      type: "java",
+      type: "javalist",
     },
     JavaScript: {
       label: "JavaScript Array",
-      type: "js",
+      type: "jsarray",
     },
   };
 
@@ -30,6 +34,7 @@ const OutputType = {
     outputForms.innerHTML = "";
     const outputTypes = [
       OutputType.SqlWhereClause,
+      OutputType.SqlTempTable,
       OutputType.CSharpArray,
       OutputType.RubyList,
       OutputType.JavaList,
@@ -57,20 +62,25 @@ const OutputType = {
 
   function generateString(input, outputType) {
     var output = "";
-    switch (outputType) {
-      case OutputType.RubyList:
+    switch (outputType.type) {
+      case OutputType.RubyList.type:
         output = `[${input.map((x) => `"${x}"`).join(", ")}]`;
         break;
 
-      case OutputType.SqlWhereClause:
+      case OutputType.SqlWhereClause.type:
         output = `(${input.map((x) => `'${x}'`).join(", ")})`;
         break;
 
-      case OutputType.CSharpArray:
+      case OutputType.SqlTempTable.type:
+        // SELECT str INTO #tmp FROM ('a'' AS str UNION SELECT ''b'' AS str UNION SELECT ''c') q
+        output = `SELECT str INTO #tmp FROM (SELECT ${input.map((x) => `'${x}'`).join(" AS str UNION SELECT ")} AS str) q`;
+        break;
+
+      case OutputType.CSharpArray.type:
         output = `new [] { ${input.map((x) => `"${x}"`).join(", ")} }`;
         break;
 
-      case OutputType.JavaList:
+      case OutputType.JavaList.type:
         output = `Arrays.asList(${input.map((x) => `"${x}"`).join(", ")})`;
         break;
     }
