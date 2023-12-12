@@ -68,7 +68,7 @@ const OutputType = {
         break;
 
       case OutputType.SqlWhereClause.type:
-        output = `(${input.map((x) => `'${x}'`).join(", ")})`;
+        output = `IN (${input.map((x) => `'${x}'`).join(", ")})`;
         break;
 
       case OutputType.SqlTempTable.type:
