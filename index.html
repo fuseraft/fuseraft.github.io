@@ -12,45 +12,236 @@
          ░                                    ░ ░                                      ░                  ░             
 -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>String List and Array Generator</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap"/>
-    <link rel="stylesheet" href="assets/css/site.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fuseraft/kiwi</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: rgba(142, 229, 63, 1);
+      padding: 20px 0;
+    }
+
+    a {
+      color: rgba(142, 229, 63, 1);
+    }
+
+    .hero.is-primary,
+    .button.is-primary {
+      background-color: rgba(142, 229, 63, 1);
+    }
+
+    .hero-body h1 {
+      font-size: 3rem;
+    }
+
+    .code-block {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .nested-list {
+      padding-left: 1.5em;
+    }
+
+    footer {
+      background-color: rgba(142, 229, 63, 1);
+      padding: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero is-primary">
+    <div class="hero-body has-text-centered">
+      <h1 class="title">kiwi</h1>
+      <h2 class="subtitle">an unorthodox scriping language</h2>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <section class="section">
     <div class="container">
-      <h1 class="title is-1">String List and Array Generator</h1>
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <p class="content">kiwi is a modern, lightweight scripting language designed for simplicity, flexibility, and
+            performance.</p>
+          <p class="content">a quick taste of kiwi:</p>
 
-      <div class="columns is-flex-desktop">
-        <div class="column is-half">
-          <div class="field">
-            <label class="label">Enter a list of strings here (newline delimited):</label>
-            <div class="control">
-              <textarea id="inputStrings" class="textarea" placeholder="String 1&#10;String 2&#10;String 3&#10;..."></textarea>
-            </div>
+          <div class="code-block">
+            <pre><code># a simple kiwi program to greet the world.
+fn greet(name)
+  println "Hello, ${name}!"
+end
+
+greet("kiwi")
+          </code></pre>
           </div>
 
-          <div class="field">
-            <button class="button is-primary" onclick="generateStrings()">
-              Generate Strings
-            </button>
+          <div class="has-text-centered">
+            <a class="button is-primary is-large"
+              href="https://github.com/fuseraft/kiwi/releases/download/v1.4.8/kiwi-1.4.8.zip" target="_blank">download
+              kiwi 1.4.8 🥝</a>
           </div>
-        </div>
-
-        <div class="column is-half">
-          <div class="field">
-            <label class="label">Generated:</label>
-          </div>
-
-          <div id="outputForms"></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <script src="assets/js/site.js?v=20231211003"></script>
-  </body>
+  <!-- Getting Started -->
+  <section class="section">
+    <div class="container">
+      <div class="column is-8 is-offset-2">
+        <h2 class="title">README</h2>
+        <h2 class="title is-4">Table of Contents</h2>
+        <ul>
+          <li><a href="#getting-started">Getting Started</a>
+            <ul class="nested-list">
+              <li><a href="#docker">Docker</a></li>
+              <li><a href="#linux-builds">Linux</a></li>
+              <li><a href="#windows-builds">Windows</a></li>
+              <li><a href="#visual-studio-code-extension">VS Code</a></li>
+            </ul>
+          </li>
+          <li><a href="#documentation">Documentation</a>
+            <ul class="nested-list">
+              <li><a href="#kiwi-wiki">Wiki</a></li>
+              <li><a href="#test-suite">Tests</a></li>
+              <li><a href="#examples">Examples</a></li>
+            </ul>
+          </li>
+          <li><a href="#contributions">Contributions</a></li>
+          <li><a href="#license">License</a></li>
+        </ul>
+        <br />
+
+        <h2 id="getting-started" class="title is-4">Getting Started</h2>
+        <h3 id="docker" class="title is-5">Docker</h3>
+        <p>Experiment in a Docker container.</p>
+        <pre><code class="lang-bash">sudo docker build -t kiwi-lang .
+sudo docker <span class="hljs-keyword">run</span><span class="bash"> -it -v $(<span class="hljs-built_in">pwd</span>):/workspace kiwi-lang</span>
+</code></pre>
+        <h3 id="linux-builds" class="title is-5">Linux Builds</h3>
+        <p>To build, use your favorite C++ compiler.</p>
+        <p>This repo uses GCC and Make.</p>
+        <br />
+
+        <h4 id="fedora-rhel" class="title is-6">Fedora / RHEL</h4>
+        <pre><code class="lang-bash">sudo dnf <span class="hljs-keyword">update</span>
+sudo dnf <span class="hljs-keyword">install</span> gcc-c++
+sudo dnf <span class="hljs-keyword">install</span> make
+</code></pre>
+
+        <h4 id="ubuntu-debian" class="title is-6">Ubuntu / Debian</h4>
+        <pre><code class="lang-bash">sudo apt <span class="hljs-keyword">update</span>
+sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">install</span> g++
+sudo apt-<span class="hljs-keyword">get</span> <span class="hljs-keyword">install</span> make
+</code></pre>
+
+        <p>Then build with Make.</p>
+        <pre><code class="lang-bash"><span class="hljs-attribute">make</span>
+</code></pre>
+
+        <h4 id="installing-kiwi-on-linux" class="title is-5">Installing on Linux</h4>
+        <p>Download the repository and run <code>sudo make install</code> to build and run the installation script.
+        </p>
+        <pre><code class="lang-bash">git clone http<span class="hljs-variable">s:</span>//github.<span class="hljs-keyword">com</span>/fuseraft/kiwi.git
+<span class="hljs-keyword">cd</span> kiwi
+sudo <span class="hljs-keyword">make</span> install
+</code></pre>
+        <h5 id="to-manually-install-kiwi-after-it-is-built-run-">To manually install kiwi after it is built, run:</h5>
+        <pre><code class="lang-bash">./<span class="hljs-keyword">bin/kiwi </span>configure install
+</code></pre>
+        <h5 id="to-uninstall-kiwi-run-">To uninstall kiwi, run:</h5>
+        <pre><code class="lang-bash"><span class="hljs-attribute">kiwi configure uninstall</span>
+</code></pre>
+        <h3 id="windows-builds" class="title is-5">Windows Builds</h3>
+        <p>You can find a 64-bit build (named <strong><code>kiwi.exe</code></strong>) in the latest release.</p>
+        <p>To build on Windows, you need to open a <a
+            href="https://learn.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-170">64-bit
+            hosted developer command prompt</a>.</p>
+        <p>Then navigate to the source code and run <a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/build.bat"><code>build.bat</code></a>.</p>
+        <pre><code class="lang-cmd"><span class="hljs-built_in">cd</span> <span class="hljs-built_in">path</span>\to\kiwi
+build.bat
+</code></pre>
+        <p><em>Note: The Windows build does not support <code>.🥝</code> files (use the <code>.kiwi</code>
+            extension).</em></p>
+        <br />
+        
+            <h3 id="visual-studio-code-extension" class="title is-5">Visual Studio Code Extension</h3>
+        <p>You can install the <a
+            href="https://marketplace.visualstudio.com/items?itemName=fuseraft.kiwi-lang">extension</a> for
+          syntax-highlighting in VS Code.</p>
+        <p>Launch VS Code Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>), paste the following command, and press enter.</p>
+        <pre><code><span class="hljs-keyword">ext </span><span class="hljs-keyword">install </span>fuseraft.kiwi-lang
+</code></pre>
+        <h2 id="documentation" class="title is-4">Documentation</h2>
+        <h3 id="kiwi-wiki" class="title is-5">Wiki</h3>
+        <p>You can find detailed information on language features in the <a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/README.md">kiwi wiki</a>.</p>
+        <br />
+
+        <h3 id="test-suite" class="title is-5">Test Suite</h3>
+        <p>Explore the <a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/test.%F0%9F%A5%9D">test suite</a> for a collection of tests.</p>
+        <p>To run the test suite, execute:</p>
+        <pre><code class="lang-shell">kiwi <span class="hljs-built_in">test</span>
+</code></pre>
+        <p>To build and run the test suite, execute:</p>
+        <pre><code class="lang-shell">make <span class="hljs-built_in">test</span>
+</code></pre>
+        <h3 id="examples" class="title is-5">Examples</h3>
+        <p>You can find <a href="https://github.com/fuseraft/kiwi/tree/v1.4.8/docs/examples">many code examples</a> in the documentation.</p>
+        <p>Here are a handful:</p>
+        <ul class="nested-list">
+          <li><a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/examples/algo/levenshtein.kiwi">Levenshtein distance</a></li>
+          <li><a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/examples/algo/md5_hash.kiwi">MD5 hashing algorithm</a></li>
+          <li><a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/examples/algo/sieve_of_eratosthenes.kiwi">Sieve of Eratosthenes</a></li>
+          <li><a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/examples/cellular_automata/life.kiwi">Conway&#39;s Game of Life</a></li>
+          <li><a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/examples/project_euler/">Project Euler stuff</a></li>
+          <li><a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/docs/examples/webapp/">Simple web app</a></li>
+        </ul>
+        <br />
+
+        <h2 id="contributions" class="title is-4">Contributions</h2>
+        <p>I welcome and appreciate any and all contributions to kiwi! Here&#39;s how you can contribute:
+        </p>
+        <ol class="nested-list">
+          <li><strong>Join the Discord</strong>: <a
+              href="https://discord.com/channels/1221516965743431841/1221553678104920195">The Kiwi Programming
+              Language</a></li>
+          <li><strong>Fork the Repository</strong>: Fork the project to your GitHub account.</li>
+          <li><strong>Clone the Forked Repository</strong>: Clone it to your machine.</li>
+          <li><strong>Set Up Your Environment</strong>: Follow the &quot;Getting Started&quot; section.</li>
+          <li><strong>Make Changes</strong>: Implement your features or fixes.</li>
+          <li><strong>Test Your Changes</strong>: Ensure all tests pass.</li>
+          <li><strong>Create a Pull Request</strong>: Submit it from your fork to the main kiwi repository.</li>
+        </ol>
+        <br />
+
+        <p>For more details, please read <a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+        <br />
+
+        <h2 id="license" class="title is-4">License</h2>
+        <p>This project is licensed under the <a href="https://github.com/fuseraft/kiwi/blob/v1.4.8/LICENSE">MIT License</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer has-text-centered">
+    <div class="content has-text-white">
+      <strong>kiwi</strong> by <a href="https://fuseraft.com/">fuseraft</a>
+    </div>
+  </footer>
+
+</body>
+
 </html>
