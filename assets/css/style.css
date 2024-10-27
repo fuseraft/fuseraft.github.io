@@ -70,7 +70,7 @@ a:hover {
 
 .svg-background {
   background-image: url('../../favicon.svg');
-  background-size: cover;
-  background-position: center;
+  background-size: inherit;
+  background-position: top;
   background-repeat: no-repeat;
 }
