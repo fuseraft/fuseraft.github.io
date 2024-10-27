@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html, body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+header {
+  background-color: #4ACB22;
+  padding: 20px 0;
+}
+  
+footer {
+  background-color: #4ACB22;
+  padding: 20px 0;
+}
+
+
+.hero.is-primary,
+.button.is-primary {
+  background-color: #4ACB22;
+}
+
+a {
+  color: #4ACB22;
+}
+
+a:hover {
+  background-color: rgba(142, 229, 63, 1) !important;
+}
+
+.hero-body h1 {
+  font-size: 3rem;
+}
+
+.code-block {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Syntax highlighting */
+.kiwi-keyword {
+  color: #0077aa;
+  font-weight: bold;
+}
+
+.kiwi-function-name {
+  color: #d35400;
+}
+
+.kiwi-variable {
+  color: #573ed1;
+}
+
+.kiwi-number {
+  color: #2980b9;
+}
+
+.kiwi-string {
+  color: #27ae60;
+}
+
+.kiwi-comment {
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.svg-background {
+  background-image: url('../../favicon.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
