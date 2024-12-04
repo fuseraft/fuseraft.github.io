@@ -47,6 +47,10 @@ a:hover {
   font-weight: bold;
 }
 
+.kiwi-type-name {
+  color: #ba0000;
+}
+
 .kiwi-function-name {
   color: #d35400;
 }
