@@ -15,15 +15,31 @@
       }
     })();
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500&family=Geist+Mono:wght@400&display=swap">
   <style>
-    :root { --bg: #fff; --fg: #111; --muted: #6b6b6b; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #0e0e0e; --fg: #ededed; --muted: #8f8f8f; } }
-    body { margin: 0; background: var(--bg); color: var(--muted); font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-    main { max-width: 40rem; margin: 0 auto; padding: 18vh 1rem 4rem; }
-    a { color: var(--fg); }
+    :root { --bg: #fff; --fg: #0a0a0a; --muted: #6e6e6e; --faint: #a3a3a3; --rule: #e5e5e5; --accent: #c4452e; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0a0a0a; --fg: #ededed; --muted: #8f8f8f; --faint: #5c5c5c; --rule: #1f1f1f; --accent: #e5764f; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 500 16px/1.55 "Geist", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { max-width: 72rem; margin: 0 auto; padding: 24vh 1rem 4rem; }
+    @media (min-width: 48rem) { main { padding-left: 2.5rem; padding-right: 2.5rem; } }
+    .mono { font: 400 .75rem/1 "Geist Mono", ui-monospace, Menlo, monospace; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: .6rem; }
+    .mono::before { content: ""; width: .5rem; height: .5rem; background: var(--accent); }
+    h1 { margin: 1.75rem 0 2.5rem; font-size: clamp(2.5rem, 7.2vw, 5.5rem); line-height: .98; font-weight: 500; letter-spacing: -.055em; }
+    h1 span { color: var(--faint); }
+    a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+    a:hover, a:focus-visible { color: var(--accent); border-color: var(--accent); }
   </style>
 </head>
 <body>
-  <main><p>Page not found. <a href="/">fuseraft.ai</a></p></main>
+  <main>
+    <div class="mono">404</div>
+    <h1>Not found. <span>Nothing lives here.</span></h1>
+    <a href="/">Back to fuseraft.ai</a>
+  </main>
 </body>
 </html>
